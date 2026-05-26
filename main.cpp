@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cmath>
 
 int main() {
     
@@ -22,6 +23,17 @@ int main() {
             int r = x;
             int g = (x + y) / 2;
             int b = y;
+
+            int radius = 120;
+            int centerX = img_width / 2;
+            int centerY = img_height / 2;
+
+            bool inCirc = sqrt(pow((centerX - x), 2) + pow((centerY - y), 2)) < radius;
+    
+            if (inCirc) {
+                std::cout << "0 0 0\n";
+                continue;            
+            }            
 
             std::cout << r << ' ' << g << ' ' << b << '\n';
         }     
