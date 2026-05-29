@@ -18,3 +18,7 @@ const std::vector<Pixel>& Canvas::getPixels() const {
 Pixel& Canvas::at(int x, int y) {
     return pixels[y * width + x];
 }
+
+void Canvas::setBackgroundColour(Pixel colour) {
+    std::fill(pixels.begin(), pixels.end(), colour);
+}

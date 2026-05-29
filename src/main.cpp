@@ -8,6 +8,8 @@ int main() {
     
     Canvas canvas(1920, 1080);
     int maxColour = 255;
+    
+    canvas.setBackgroundColour({0, 255, 0});
 
     Circle c1(960, 540, {255, 0, 0}, 120);
     Square s1(400, 300, {0,0,255}, 50);

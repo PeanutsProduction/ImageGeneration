@@ -16,10 +16,12 @@ class Canvas {
         // function to change pixel value at specific coordinate
         Pixel& at(int x, int y);
 
+        // getters
         int getWidth() const;
         int getHeight() const;
-
         const std::vector<Pixel>& getPixels() const;
+
+        void setBackgroundColour(Pixel colour);
 };
 
 #endif
