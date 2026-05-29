@@ -1,20 +1,24 @@
 #ifndef SHAPE_2D_CIRCLE
 #define SHAPE_2D_CIRCLE
 
-#include "canvas.h"
-#include "pixel.h"
+#include "shape.h"
 
-class Circle {
+class Circle : public Shape {
     private:
-        int x, y, radius;
-        Pixel colour;
+        int radius;
     
     public:
-        Circle(int x, int y, int radius, Pixel colour);
+        Circle(int x, int y, Pixel colour, int radius);
 
-        bool contains(int px, int py);
+        bool contains(int px, int py) const override;
 
-        void draw(Canvas& canvas);
+        void draw(Canvas& canvas) const override;
+
+        int getRadius();
 };
 
-#endif
+#endif     
+
+     
+
+

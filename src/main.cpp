@@ -2,17 +2,18 @@
 #include <cmath>
 #include "canvas.h"
 #include "Shapes/circle.h"
+#include "Shapes/square.h"
 
 int main() {
     
     Canvas canvas(1920, 1080);
     int maxColour = 255;
 
-    Circle c1(960, 540, 120, {255, 0, 0});
-    Circle c2(400, 300, 80, {0,0,255});
+    Circle c1(960, 540, {255, 0, 0}, 120);
+    Square s1(400, 300, {0,0,255}, 50);
 
     c1.draw(canvas);
-    c2.draw(canvas);
+    s1.draw(canvas);
 
     // ppm config
     /*

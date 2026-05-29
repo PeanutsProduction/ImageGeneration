@@ -1,17 +1,25 @@
 #include "Shapes/circle.h"
 #include <cmath>
 
-Circle::Circle(int x, int y, int radius, Pixel colour): x(x), y(y), radius(radius), colour(colour) {};
+Circle::Circle(int x, int y, Pixel colour, int radius): Shape(x, y, colour), radius(radius) {}
 
-bool Circle::contains(int px, int py) {
-    return sqrt(pow(x - px, 2) + pow(y - py, 2)) < radius;
+bool Circle::contains(int px, int py) const {
+    int dx = Shape::getCenterX() - px;
+    int dy = Shape::getCenterY() - py;
+    return (dx * dx) + (dy * dy) < (radius * radius);
 }
 
-void Circle::draw(Canvas& canvas) {
-    for (int py = 0; py < canvas.getHeight(); py++) {
-        for (int px = 0; px < canvas.getWidth(); px++) {
+void Circle::draw(Canvas& canvas) const {
+    int minX = std::max(0, Shape::getCenterX() - radius);
+    int maxX = std::min(canvas.getWidth(), Shape::getCenterX() + radius);   
+
+    int minY = std::max(0, Shape::getCenterY() - radius);
+    int maxY = std::min(canvas.getHeight(), Shape::getCenterY() + radius);
+
+    for (int py = minY; py < maxY; py++) {
+        for (int px = minX; px < maxX; px++) {
             if (contains(px, py)) {
-                canvas.at(px, py) = colour;            
+                canvas.at(px, py) = Shape::getColour();            
             }        
         }    
     }
