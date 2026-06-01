@@ -1,8 +1,7 @@
 #include <iostream>
 #include <cmath>
 #include "canvas.h"
-#include "Shapes/circle.h"
-#include "Shapes/square.h"
+#include "Shapes/allShapes.h"
 
 int main() {
     
@@ -16,6 +15,8 @@ int main() {
 
     c1.draw(canvas);
     s1.draw(canvas);
+    
+    drawLine(canvas, {0, 0}, {1920, 1080});
 
     // ppm config
     /*
