@@ -13,7 +13,7 @@ int main() {
     Circle c1(960, 540, {255, 0, 0}, 120);
     Square s1(400, 300, {0,0,255}, 50);
 
-    c1.draw(canvas);
+    c1.drawWithOutline(canvas, 5);
     s1.draw(canvas);
     
     drawLine(canvas, {0, 0}, {1920, 1080});
