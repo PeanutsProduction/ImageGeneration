@@ -4,6 +4,8 @@ CXXFLAGS = -Wall -Wextra -std=c++17 -I include
 SRC      =  src/main.cpp \
             src/canvas.cpp \
             src/Shapes/*.cpp \
+            src/renderer.cpp \
+            src/vec3.cpp \
 
 OUT      = build/renderer
 
