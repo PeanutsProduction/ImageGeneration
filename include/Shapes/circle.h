@@ -13,6 +13,8 @@ class Circle : public Shape {
         bool contains(int px, int py) const override;
 
         void draw(Canvas& canvas) const override;
+    
+        void drawWithOutline(Canvas& canvas, int thickness = 1) const;
 
         int getRadius();
 };
